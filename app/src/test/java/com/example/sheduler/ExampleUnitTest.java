@@ -1,4 +1,4 @@
-package com.example.bsitushedule;
+package com.example.sheduler;
 
 import org.junit.Test;
 

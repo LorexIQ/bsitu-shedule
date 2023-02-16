@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "BSITU Shedule"
+rootProject.name = "Sheduler"
 include ':app'

@@ -1,4 +1,4 @@
-package com.example.bsitushedule;
+package com.example.sheduler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
