@@ -5,8 +5,15 @@ import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 
+/**
+ * Class used to write to database, load information about <b>pair</b> from database
+ * and transfer between activities. The class also has a checkTimeFormatHHMM method that should be
+ * used to check the format time before passing it to the class.
+ * @author Illarionov
+ * @version 1.0
+ * @see android.os.Parcelable*/
 public class Pair implements Parcelable {
-    private int _id;
+    private long _id;
     private String name;
     private String lecturer;
     private String time_start;
@@ -26,7 +33,8 @@ public class Pair implements Parcelable {
      * @param time_end can be null, if not fits the format HH:MM then this parameter will be null
      * @param  cabinet can be null
      * @param comment can be null */
-    public Pair(int _id, String name, String lecturer, String time_start, String time_end, Integer cabinet, String comment){
+    public Pair(long _id, String name, String lecturer, String time_start, String time_end,
+                Integer cabinet, String comment) {
         if (name == null || time_start == null) {
             throw new IllegalArgumentException("name and time_start cannot be null");
         } else if(checkTimeFormatHHMM(time_start) == null){
@@ -45,7 +53,7 @@ public class Pair implements Parcelable {
     }
 
     // getters
-    public int getId() {
+    public long getId() {
         return _id;
     }
 
@@ -132,7 +140,7 @@ public class Pair implements Parcelable {
 
     // methods and constructor for parcelable
     public Pair(Parcel in) {
-        this._id = in.readInt();
+        this._id = in.readLong();
         this.name = in.readString();
         this.lecturer = in.readString();
         this.time_start = in.readString();
@@ -148,7 +156,7 @@ public class Pair implements Parcelable {
 
     @Override
     public void writeToParcel(@NonNull Parcel parcel, int i) {
-        parcel.writeInt(this._id);
+        parcel.writeLong(this._id);
         parcel.writeString(this.name);
         parcel.writeString(this.lecturer);
         parcel.writeString(this.time_start);
