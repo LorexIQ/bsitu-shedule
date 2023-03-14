@@ -6,7 +6,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.NonNull;
 
-class DatabaseShedulerBSITU extends SQLiteOpenHelper {
+/** Class for create data
+ * @author Illarionov
+ * @see SQLiteOpenHelper*/
+public class DatabaseShedulerBSITU extends SQLiteOpenHelper {
 
     public DatabaseShedulerBSITU(@NonNull Context context) {
         super(context, Contracts.DB.DATABASE_NAME, null, Contracts.DB.DATABASE_VERSION);
